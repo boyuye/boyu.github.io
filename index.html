@@ -3,70 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Page of Boyu Ye</title> <!-- 修改为你的网站标题 -->
+    <title>叶博宇的个人主页</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        /* 基础样式 */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
         }
+        
+        /* 使用Flexbox布局确保页脚在底部 */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* 主要内容区域，可以自动扩展以填充空间 */
+        main {
+            flex: 1 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        /* 页头样式 */
         header {
-            background: #35424a;
+            background: linear-gradient(135deg, #35424a, #2c3e50);
             color: #ffffff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        
+        /* 导航样式 */
         nav {
-            background: #e8491d;
+            background: linear-gradient(90deg, #e8491d, #ff6b3d);
             color: #ffffff;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        
         nav ul {
             padding: 0;
+            display: flex;
+            justify-content: center;
+            list-style: none;
         }
+        
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            margin: 0 20px;
         }
+        
         nav a {
             color: #ffffff;
             text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 3px;
         }
-        main {
-            padding: 20px;
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
+        
+        /* 内容区域样式 */
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        /* 页脚样式 - 保持在底部 */
         footer {
-            background: #35424a;
+            background: linear-gradient(135deg, #35424a, #2c3e50);
             color: #ffffff;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
+            padding: 20px 0;
+            margin-top: auto; /* 关键属性：确保页脚保持在底部 */
             width: 100%;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            main {
+                padding: 15px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+        
+        /* 添加一些动画效果 */
+        h1, h2 {
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h1:after, h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #e8491d;
+        }
+        
+        h2:after {
+            width: 60px;
+            height: 2px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>叶博宇的个人主页</h1> <!-- 修改为你的网站主标题 -->
+        <h1>叶博宇的个人主页</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="#">首页</a></li> <!-- 修改你的导航链接 -->
+            <li><a href="#">首页</a></li>
             <li><a href="#">关于我</a></li>
+            <li><a href="#">项目展示</a></li>
             <li><a href="#">联系方式</a></li>
         </ul>
     </nav>
     <main>
-        <h2>欢迎访问我的网站</h2> <!-- 修改主要内容标题 -->
-        <p>嘻嘻</p> <!-- 修改主要内容 -->
+        <div class="content">
+            <h2>欢迎访问我的网站</h2>
+            <p>这里是我的个人主页，用于展示我的作品、技能和经历。</p>
+            <p>我是一名热爱编程和设计的开发者，专注于创建美观且功能强大的网站和应用。</p>
+        </div>
+        
+        <div class="content">
+            <h2>最新动态</h2>
+            <p>最近我正在学习前端开发的高级技术，包括响应式设计、JavaScript框架和用户体验优化。</p>
+            <p>同时，我也在参与一个开源项目，为开发者社区贡献代码。</p>
+        </div>
+        
+        <div class="content">
+            <h2>技能展示</h2>
+            <p>HTML, CSS, JavaScript, React, Vue, Node.js, Python</p>
+        </div>
     </main>
     <footer>
-        <p>boyuye © 2025 </p> <!-- 修改页脚信息 -->
+        <p>boyuye © 2025 - 页脚始终保持在页面底部</p>
     </footer>
 </body>
 </html>
